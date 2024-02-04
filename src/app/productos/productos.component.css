@@ -1,0 +1,139 @@
+/* genericos */
+img{
+    display: block;
+    width: 50%;margin: auto;
+    border-radius: 50%;
+}
+input{
+    display: block;
+    border-radius: 20px;
+    border:4px solid black;
+    width: 100%; 
+    padding: 6px; 
+    font-weight: bold;
+}
+button{
+    cursor: pointer;
+}
+h6{
+    text-align: center; font-weight: bold;font-size:large;
+}
+/* Imagen Usuario */
+.googleuser{
+    position: fixed;
+    top: 1px;
+    right: 0;
+    width: 50px;
+    height: 50px;
+}
+/* Buscador */
+.search{
+    position: relative;
+    width: 40%;margin: auto;
+    font-size: x-large;
+}
+.img-search{
+    position: absolute;top: 6px;
+    left: 10px;width: 30px;height: 24px;
+}
+.search input[placeholder]{
+     text-align: center;
+}
+::-webkit-input-placeholder{
+    color:black;
+}
+/* contenedor de frutas que cambian el color de botnoes */
+.opciones_de_estilo{
+    position: fixed;
+    top: 60%;
+}
+.opciones_de_estilo img{
+    width: 50px;
+    height: 50px;
+    padding: 10px;
+    cursor: pointer;
+}
+/*Contenedor de cards*/
+.conCards ul {
+    width: 80%;margin:auto; display:flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+}
+.btn_container{
+    display:flex;
+    flex-direction: row;
+}
+/*Card donde se muestran la imagen,h6 y el boton btn_interno*/
+.card{
+    width: 30%;border:none;margin: 1%;
+}
+.card_img{
+    border: 8px solid black;
+}
+.card button img{
+    padding: 4px;width: 40px;height: 40px;
+}
+/*Es el que aplica el color a los distintos botones*/
+.btn_interno{
+    background-color:rgb(226, 73, 99);
+    width: 100%;
+    float: left;
+    color: black;
+    font-weight: bold;
+    margin: 2px;
+    border: none;
+    border-radius: 20px;
+}
+.btn_interno-uva{
+    background-color: rgb(184, 29, 223);
+    width: 100%;
+    float: left;
+    color: black;
+    font-weight: bold;
+    margin: 2px;
+    border: none;
+    border-radius: 20px;
+}
+.btn_interno-manzana{
+    background-color:greenyellow;
+    width: 100%;
+    color: black;
+    float: left;
+    font-weight: bold;
+    margin: 2px auto;
+    border: none;
+    border-radius: 20px;
+}
+
+/* Menu productos es el contiene smoothies,frutas,y un cake */
+.menu_productos{
+    position: fixed;
+    top: 40%;
+    right: 2%;
+    border-radius: 10px;
+}
+.menu_productos img{
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+/*Diseño para dispositivos moviles*/
+@media only screen and (max-width:540px){
+    .conCards ul{
+        /*contenedor de cards*/
+        flex-direction: column;
+        width: 100%;
+        margin: auto;
+    }
+    .card{
+        width: 60%;
+        margin: auto;
+    }
+    .card img{
+        width: 60%;
+    }
+    .search{
+        width: 80%; 
+    }
+}

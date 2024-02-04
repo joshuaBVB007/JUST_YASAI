@@ -1,0 +1,30 @@
+<app-nav-bar></app-nav-bar>
+
+<h1>My ShoppingList</h1>
+<p>Introduce la cantidad en el cuadro del producto</p>
+<button  (click)="confirm()">Confirmar compra</button>
+<div class="container">
+    <div  class="card" *ngFor="let item of items_nearto_buy;let i=index">
+        <img [src]="item.url" alt="item" srcset="">
+        <p>Product's name: {{item.nombre}}</p>
+        <p>Price: {{item.precio}}€</p>
+        <input #jona  class="valor" type="number" min="0" [value]="Quantity">
+        <button (click)="add(item.nombre,item.precio,jona.value)">añadir</button>
+    </div>
+</div>
+
+<h1 class="popUp">Thanks Client</h1>
+<h1 class="popUpReject">See you next time Client</h1>
+
+
+<footer class="footer">
+    <audio #sourcetag controls>
+        <source src="./../../assets/VideosAudios/coins.mp3" type="audio/mp3" />
+    </audio>
+    <span>Total: {{total}}€ </span> 
+    <button *ngIf="total">Rechazar</button>
+    <button *ngIf="total">Pagar</button>
+</footer>
+
+
+

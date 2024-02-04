@@ -1,0 +1,23 @@
+/* You can add global styles to this file, and also import other style file*
+*/
+
+@font-face {
+    font-family: animated;
+    src: url("assets/Fuentes/Fuzzy_Bubbles/FuzzyBubbles-Bold.ttf");
+}
+
+/* Colours to all the project */
+:root{
+    --white-normal: rgb(255, 255, 255);
+    --softer-purple:rgba(235, 14, 161, 0.863);
+    --blacky:rgb(8, 8, 8);
+    --greeny:rgb(253, 249, 4);
+    --strong-green:rgb(151, 6, 255);
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: animated;
+}
