@@ -8,30 +8,35 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ProductDetailComponent implements OnInit {
 
-  vitaminas:boolean=false;
-  info_extra:boolean=false;
-  pais_procedencia:boolean=false;
+  vitamins:boolean=false;
+  extra_info_available:boolean=false;
+  origin_from:boolean=false;
+
+  VitaText="Vitamins";
+  ExtraText="Extra information";
+  OriginText="Origin from";
 
   new_url:any;
-  new_nombre="";
-  new_desc="";
+  new_name="";
 
   constructor(private route:ActivatedRoute) {}
   
   ngOnInit(): void {
-    this.new_nombre=this.route.snapshot.params['nombre'];
+    this.new_name=this.route.snapshot.params['nombre'];
     this.new_url=this.route.snapshot.params['url'];
-    this.new_desc=this.route.snapshot.params['desc'];
   }
 
   showVitaminas(){
-    this.vitaminas=true;
+    this.vitamins ? this.VitaText="Vitamins" : this.VitaText="  Hide";
+    this.vitamins=!this.vitamins;
   }
   showinfo_extra(){
-    this.info_extra=true;
+    this.extra_info_available ? this.ExtraText="Extra information" : this.ExtraText="Hide"
+    this.extra_info_available=!this.extra_info_available;
   }
   showinfo_pais_procedencia(){
-    this.pais_procedencia=true;
+    this.origin_from ? this.OriginText="Origin from" : this.OriginText="Hide"
+    this.origin_from=!this.origin_from;
   }
   
 }

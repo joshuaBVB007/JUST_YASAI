@@ -9,21 +9,21 @@ export class AboutUsComponent implements OnInit {
   tags=[
     {
       nombre:"Rice power",
-      img:"../../assets/About-us/cereal.png",
+      img:"../../assets/colored_images/cereal.png",
       desc:`Rice is a source of protein and contains various vitamins,
       such as thiamin and niacin, and minerals, such as zinc and phosphorus.
       Some nutrients, including vitamin E, magnesium, potassium, and manganese,etc`
     },
     {
       nombre:"Harvest Time",
-      img:"../../assets/About-us/combine-harvester.png",
+      img:"../../assets/colored_images/vegetables.png",
       desc:`Rice is a source of protein and contains various vitamins,
       such as thiamin and niacin, and minerals, such as zinc and phosphorus.
       Some nutrients, including vitamin E, magnesium, potassium, and manganese,etc`
     },
     {
       nombre:"None",
-      img:"../../assets//About-us/vegetables.png",
+      img:"../../assets/colored_images/combine-harvester.png",
       desc:`Rice is a source of protein and contains various vitamins,
       such as thiamin and niacin, and minerals, such as zinc and phosphorus.
       Some nutrients, including vitamin E, magnesium, potassium, and manganese,etc`

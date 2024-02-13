@@ -1,37 +1,36 @@
 import { Injectable } from '@angular/core';
-import { Observable, Subject } from 'rxjs';
-import { FirebaseObject } from './productos/productos.component';
+import { BehaviorSubject, Observable, Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 
 export class RestService {
-  mi_lista_subject=new Subject<FirebaseObject[]>();
-  //esta propiedad esta siendo trabajada en payout
-  productos_en_el_carrito:any[]=[];
-
-  que_es="";
-  current_config="manzana";
+  product_items:object[]=[];
+  private ClientData={count:0,prize:0,items:this.product_items}
+  private stringSubject: BehaviorSubject<string> = new BehaviorSubject<string>('');
+  private ClientPurchaseData: BehaviorSubject<object> = new BehaviorSubject<object>(this.ClientData);
 
   constructor() {}
-  add_to_mi_lista(producto:FirebaseObject){
-      //ingresamos un nuevo producto añadido por el cliente
-      this.productos_en_el_carrito.push(producto);
-      this.mi_lista_subject.next(this.productos_en_el_carrito);
+
+  getClientPurchaseDataObservable(){
+    return this.ClientPurchaseData.asObservable();
   }
-  delete_A_product_from_list(indice:number){
-    this.productos_en_el_carrito.splice(indice,1);
-    this.mi_lista_subject.next(this.productos_en_el_carrito);
+  setClientPurchaseData(){
+    this.ClientPurchaseData.next({count:0,name:"",items:[]})
   }
-  Return_lista_subject():Observable<FirebaseObject[]>{
-    return this.mi_lista_subject;
+  addProductToCart(productName:string,productPrize:number){
+    this.ClientData.items.push({productName,productPrize});
+    this.ClientData.count=this.ClientData.items.length;
+    this.ClientData.prize=this.ClientData.prize+productPrize;
+    console.log(this.ClientData)
+    this.ClientPurchaseData.next(this.ClientData)
   }
-  ReturnCurrentConfig(){
-    return this.current_config;
-  } 
-  ChangeCurrentConfig(new_config:string){
-        this.current_config=new_config;
-        console.log(this.current_config);
-  }  
+
+  getString() {
+    return this.stringSubject.asObservable();
+  }
+  setString(newValue: string) {
+    this.stringSubject.next(newValue);
+  }
 }

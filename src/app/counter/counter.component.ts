@@ -9,16 +9,13 @@ import { RestService } from '../rest.service';
 })
 
 export class CounterComponent implements OnInit {
+  cantidad: any;
+  constructor(private service:RestService) { }
 
-  longitud_lista:any;
-  constructor(private rest:RestService) { }
   ngOnInit(): void {
-      this.rest.Return_lista_subject().subscribe(lista=>{
-        this.longitud_lista=lista.length;
-      });
-      if(this.rest.que_es==='productos'){
-        this.longitud_lista=this.rest.productos_en_el_carrito.length;
-      }
+    this.service.getClientPurchaseDataObservable().subscribe((value: any) => {
+        this.cantidad=value['count'];
+    })
   }
 
 }

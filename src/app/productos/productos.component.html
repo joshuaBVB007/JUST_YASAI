@@ -3,75 +3,39 @@
 
 <!-- Search Bar -->
 <div class="search">
-        <input id="input-search" [(ngModel)]='dato' type="text" placeholder="Type product's name?">
-        <img class="img-search" src="../../assets/Productos/search.png" alt="buscador" srcset="">
+        <input id="input-search" [(ngModel)]='dato' type="text" placeholder="Type product's name">
+        <img class="img-search" src="../../assets/icons/search.png" alt="buscador" srcset="">
 </div>
 <br>
+<p>click on the cart if you're done</p>
+<br>
 <div class="opciones_de_estilo">
-        <img (click)="changeStyle('cereza')" src="../../assets/Productos/Logos_cambio_color/fresa.png" alt="" srcset="">
-        <img (click)="changeStyle('manzana')" src="../../assets/Productos/Logos_cambio_color/manzana.png" alt="" srcset="">
-        <img (click)="changeStyle('uvas')" src="../../assets/Productos/Logos_cambio_color/uvas_.png" alt="" srcset="">
+        <img (click)="setButtonColor('fresa')" src="../../assets/icons/fresa.png" alt="" srcset="">
+        <img (click)="setButtonColor('manzana')"  src="../../assets/icons/manzana.png" alt="" srcset="">
+        <img (click)="setButtonColor('uvas')"  src="../../assets/icons/uvas.png" alt="" srcset="">
 </div>
+
 <div class="menu_productos">
-            <img src="../../assets/flaticon_icons/cupcake.png" (click)="cambio('postres')" alt="smoothie">
-            <img src="../../assets/flaticon_icons/smoothie.png" (click)="cambio('smoothies')" alt="smoothie">
-            <img src="../../assets/flaticon_icons/frutas.png" (click)="cambio('frutas')" alt="smoothie">
-    </div> 
-<h1></h1>
+            <img src="../../assets/icons/cupcake.png" title="Desserts" alt="logo de postres">
+            <img src="../../assets/icons/smoothie.png" title="Smoothies" alt="logo de smoothie">
+            <img src="../../assets/icons/frutas.png" title="Fruits" alt="logo de frutas">
+</div> 
 
 <!-- CARDS DE LOS PRODUCTOS -->
-<div  [ngSwitch]="tipo_producto" class="conCards">
-        <ul *ngSwitchCase="'frutas'" >
-                <div *ngFor="let item of frutas_ | search:dato" class="card">
-                        <img class="card_img"  [src]="item.url" alt="r">
-                        <h6>{{item.nombre}}</h6>
-                        <div class="btn_container">
-                                <button (click)="Add(item)"  [ngClass]="btn_disenio">
-                                        <img src="../../assets/flaticon_icons/add-cart.png" alt="añadir" srcset="">
-                                </button>
-                                <!-- <button  [ngClass]="btn_disenio">
-                                        <img src="../../assets/Productos/marcador-de-favoritos.png" alt="" srcset="">
-                                </button> -->
-                                <button [routerLink]="['/details',item.nombre,{url:item.url,desc:item.descripcion}]"   [ngClass]="btn_disenio">
-                                        <img src="../../assets/Productos/info.png" alt="info" srcset="">
-                                </button>
-                        </div>
+<div  class="conCards">
+        <div *ngFor="let item of frutas | search:dato" class="card">
+                <img class="card_img" [src]="item.src" alt="r">
+                <h2>{{item.nombre}}</h2>
+                <span>{{item.precio}} EUR/kg</span>
+                <div class="btn_container">
+                        <button (click)="Add(item.nombre,item.precio)"  [ngClass]="btn_disenio">
+                                <img src="../../assets/icons/info.png" alt="añadir" srcset="">
+                        </button>
+                        <button [routerLink]="['/details',item.nombre,{url:item.src}]"   [ngClass]="btn_disenio">
+                                <img src="../../assets/icons/marcador-de-favoritos.png" alt="info" srcset="">
+                        </button>
                 </div>
-        </ul>
-        <ul *ngSwitchCase="'postres'" >
-                <div *ngFor="let item of postres_ | search:dato" class="card">
-                        <img class="card_img" [src]="item.url" alt="r">
-                        <h6>{{item.nombre}}</h6>
-                        <div class="btn_container">
-                                <button (click)="Add(item)"  [ngClass]="btn_disenio">
-                                        <img src="../../assets/flaticon_icons/add-cart.png" alt="añadir" srcset="">
-                                </button>
-                                <!-- <button  [ngClass]="btn_disenio">
-                                        <img src="../../assets/Productos/marcador-de-favoritos.png" alt="" srcset="">
-                                </button> -->
-                                <button [routerLink]="['/details',item.nombre,{url:item.url,desc:item.descripcion}]"   [ngClass]="btn_disenio">
-                                        <img src="../../assets/Productos/info.png" alt="info" srcset="">
-                                </button>
-                        </div>
-                </div>
-        </ul>
-        <ul *ngSwitchCase="'smoothies'" >
-                <div *ngFor="let item of smoothies_ | search:dato" class="card">
-                        <img class="card_img" [src]="item.url" alt="r">
-                        <h6>{{item.nombre}}</h6>
-                        <div class="btn_container">
-                                <button  (click)="Add(item)"  [ngClass]="btn_disenio">
-                                        <img src="../../assets/flaticon_icons/add-cart.png" alt="añadir" srcset="">
-                                </button>
-                                <!-- <button   [ngClass]="btn_disenio">
-                                        <img src="../../assets/Productos/marcador-de-favoritos.png" alt="" srcset="">
-                                </button> -->
-                                <button [routerLink]="['/details',item.nombre,{url:item.url,desc:item.descripcion}]"   [ngClass]="btn_disenio">
-                                        <img src="../../assets/Productos/info.png" alt="info" srcset="">
-                                </button>
-                        </div>
-                </div>
-        </ul>
+        </div>
 </div>
 
 
