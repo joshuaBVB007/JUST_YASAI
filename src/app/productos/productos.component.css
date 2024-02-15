@@ -39,12 +39,16 @@ h6{
 /* Buscador */
 .search{
     position: relative;
+    display: flex;
+    flex-direction: row;
     width: 40%;margin: auto;
     font-size: x-large;
 }
 .img-search{
-    position: absolute;top: 6px;
-    left: 10px;width: 30px;height: 24px;
+    position: absolute;
+    left: 2%;
+    top: 16%;
+    width: 8%;
 }
 .search input[placeholder]{
      text-align: center;
@@ -87,7 +91,6 @@ h6{
 /*Es el que aplica el color a los distintos botones*/
 .btn_strawberry_color{
     background-color:rgb(240, 114, 135);
-    width: 100%;
     float: left;
     color: black;
     font-weight: bold;
@@ -97,7 +100,6 @@ h6{
 }
 .btn_grape_color{
     background-color: rgb(184, 29, 223);
-    width: 100%;
     float: left;
     color: black;
     font-weight: bold;
@@ -107,11 +109,10 @@ h6{
 }
 .btn_apple_color{
     background-color:greenyellow;
-    width: 100%;
-    color: black;
     float: left;
+    color: black;
     font-weight: bold;
-    margin: 2px auto;
+    margin: 2px;
     border: none;
     border-radius: 20px;
 }
