@@ -10,7 +10,6 @@ export class SearchPipe implements PipeTransform {
  
     if(texto===''){
       return arreglo;
-      console.log('esta entrando')
     }
 
     return arreglo.filter( item => {

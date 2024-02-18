@@ -30,9 +30,10 @@ export class RestService {
 
   removeProductFromCart(indexToDelete:number,productPrize:number){
     this.ClientData.items.splice(indexToDelete, 1);
-    this.ClientData.count=this.ClientData.items.length-1;
+    this.ClientData.count=this.ClientData.items.length;
     this.precioReducido=this.ClientData.prize-productPrize;
     this.ClientData.prize=this.precioReducido;
+    console.log(this.ClientData);
     this.ClientPurchaseData.next(this.ClientData);
   }
 

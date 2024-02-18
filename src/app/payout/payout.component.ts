@@ -10,9 +10,7 @@ import { RestService } from '../rest.service';
 export class PayoutComponent implements OnInit {
   // lista que hemos renderizado en la interfaz
   items_tobeSealed:any;
-  text_remove_button="Remove";
   suma:number=0;
-  @ViewChild("sourcetag") myNameElem: ElementRef | undefined;
 
   constructor(private service:RestService) { }
   
@@ -26,4 +24,5 @@ export class PayoutComponent implements OnInit {
   removeFromCartByClient(index:number,prize:number){
     this.service.removeProductFromCart(index,prize);
   }
+
 }

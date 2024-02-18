@@ -9,7 +9,7 @@ import { RestService } from '../rest.service';
 })
 
 export class CounterComponent implements OnInit {
-  cantidad: any;
+  cantidad:number=0;
   constructor(private service:RestService) { }
 
   ngOnInit(): void {

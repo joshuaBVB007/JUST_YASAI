@@ -80,6 +80,7 @@ h6{
 }
 /*Card donde se muestran la imagen,h6 y el boton btn_interno*/
 .card{
+    position: relative;
     width: 30%;border:none;margin: 1%;
 }
 .card_img{
@@ -99,7 +100,7 @@ h6{
     border-radius: 20px;
 }
 .btn_grape_color{
-    background-color: rgb(184, 29, 223);
+    background-color: rgb(203, 175, 230);
     float: left;
     color: black;
     font-weight: bold;
@@ -116,7 +117,16 @@ h6{
     border: none;
     border-radius: 20px;
 }
-
+.descuento{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+}
+.descuento img{
+    width: 2vw;
+    background-color: rgb(203, 175, 230);
+    padding: 2px;
+}
 /* Menu productos es el contiene smoothies,frutas,y un cake */
 .menu_productos{
     position: fixed;

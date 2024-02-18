@@ -5,17 +5,12 @@
 <div class="container">
     <div  class="card" *ngFor="let item of items_tobeSealed;let i=index">
         <p>Product: {{ item.productName }}</p>
-        <span>Prize: {{ item.productPrize }}€</span>
         <div class="buttons_container">
-            <img (click)="removeFromCartByClient(i,item.productPrize)" src="../../assets/icons/boton-agregar.png" alt="" srcset="">
-            <img src="../../assets/icons/remover-archivo.png" alt="" srcset="">
+            <img (click)="removeFromCartByClient(i,item.productPrize)" src="../../assets/icons/remover-archivo.png" alt="" srcset="">
+            <span>Prize: {{ item.productPrize }}€</span>
         </div>
     </div>
 </div>
-
-<!-- <h1 class="popUp">Thanks Client</h1>
-<h1 class="popUpReject">See you next time Client</h1> -->
-
 
 <footer class="footer">
     <span>Total: {{ suma }}€ </span>

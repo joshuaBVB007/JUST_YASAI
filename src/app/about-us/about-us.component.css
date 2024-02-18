@@ -1,62 +1,58 @@
-p{
-    color: purple;
-    font-size: small;
-}
 .principal{
-    display: grid;
-    grid-template-columns: 70% 30%;
-    background-color: var(--greeny);
+    display: flex;
+    flex-direction: row;
 }
 .principal img{
     margin-top:auto;
     margin-bottom:auto;
-    width: 100%;
+    width: 30%;
 }
-
-/* ETIQUETAS DEL IMG Y P */
 .content{
     display:flex;
     flex-direction: column;
     flex-wrap: wrap;
-    /* background-color: red; */
-    width: 100%;
-}
-.content h1{
-    color:var(--blacky);
-    font-size: 60px;
-    /* background-color: yellow; */
+    background-color: rgb(224, 224, 168);
+    font-size: 6vw;
+    width: 80%;
+    margin: auto;
 }
 .content p{
-    color:rgb(75, 59, 223);
-    font-size: x-large;
-    width: 80%;
+    color: white;
+    font-size: 2vw;
+    padding: 8%;
 }
-
-
-/* CONTENEDOR DE IMG FRUTAS Y INFO */
+.content h1{
+    text-align: center;
+    font-size: 4vw;
+}
 .etiquetas_contenido{
     display:flex;
     flex-direction: row;
-    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 80vw;
+    margin: auto;
 }
 .etiqueta{
-    display: block;
-    width: 30%;
-    margin: auto;
+    width: 50vw;
+    margin: 2%;
 }
 .etiqueta img{
     display: block;
-    width: 30%;
+    width: 14vw;
     margin: auto;
 }
 .etiqueta h1{
     text-align: center;
+    font-size: 4vw;
 }
-
-
-/* VIDEOS */
+.etiqueta p{
+    border-radius: 10px;
+    background-color: rgb(255, 0, 85);
+    color: white;
+    padding: 2%;
+    font-size: 1.2vw;
+}
 .cont_videos{
-    /* background-color: red; */
     width: 100%;
     margin: auto;
     display: flex;
@@ -68,41 +64,69 @@ p{
 }
 
 @media screen and (max-width: 768px){
-    .etiquetas_contenido{
-        flex-direction: column;       
-    }
     .etiqueta{
-        width:100%;
+        width: 100%;
     }
-    p{
-        font-size: smaller;
-        color: green;
+    .cont_videos{
+        width: 100%;
+        display: flex;
+        flex-direction:row;
+    }
+    .video_media{
+        width: 20%;
+    }
+}
+
+@media screen and (max-width: 520px){
+    .principal{
+        display: flex;
+        flex-direction: column;
+    }
+    .principal img{
+        display: none;
     }
     .content{
         display:flex;
         flex-direction: column;
         flex-wrap: wrap;
-        justify-content: center;
-        /* background-color: red; */
-        width: 100%;
-    }
-    .content h1{
-        color:var(--blacky);
-        font-size: 40px;
-        text-align: center;
+        background-color: rgb(224, 224, 168);
+        font-size: 2vw;
+        width: 80%;
+        margin: auto;
     }
     .content p{
-        color:rgb(75, 59, 223);
-        font-size: small;
+        color: white;
+        font-size: 4vw;
+        padding: 8%;
+    }
+    .content h1{
         text-align: center;
-        width: 100%;
+        font-size: 6vw;
     }
-    .principal{
+    .etiquetas_contenido{
+        display:flex;
+        flex-direction: column;
+        width: 80vw;
+        margin: auto;
+    }
+    .etiqueta{
+        width: 80vw;
+        margin: auto;
+    }
+    .etiqueta img{
         display: block;
-        width: 100%;
-        background-color: var(--greeny);
+        width: 16vw;
+        margin: auto;
     }
-    .principal img{
-        display: none;
+    .etiqueta h1{
+        text-align: center;
+        font-size: 6vw;
+    }
+    .etiqueta p{
+        border-radius: 10px;
+        background-color: rgb(255, 0, 85);
+        color: white;
+        padding: 2%;
+        font-size: 3vw;
     }
 }

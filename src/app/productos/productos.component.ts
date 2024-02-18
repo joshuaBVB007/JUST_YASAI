@@ -15,12 +15,12 @@ export class ProductosComponent implements OnInit{
   dato:string="";
 
   frutas:object[]=[
-    {nombre:"Açaí",src:"../../assets/frutas/açai.jpeg",precio:2.5},
-    {nombre:"Banana",src:"../../assets/frutas/banana.jpeg",precio:2.5},
-    {nombre:"Cereza",src:"../../assets/frutas/cereza.jpeg",precio:2.5},
-    {nombre:"Manzana verde",src:"../../assets/frutas/mverde.jpeg",precio:2.5},
-    {nombre:"Piña",src:"../../assets/frutas/piña.jpeg",precio:2.5},
-    {nombre:"Uvas",src:"../../assets/frutas/uvas.jpeg",precio:2.5},
+    {nombre:"Açaí",src:"../../assets/frutas/açai.jpeg",precio:2.5,tieneDescuento:true},
+    {nombre:"Banana",src:"../../assets/frutas/banana.jpeg",precio:2.5,tieneDescuento:false},
+    {nombre:"Strawberry",src:"../../assets/frutas/cereza.jpeg",precio:2.5,tieneDescuento:true},
+    {nombre:"Green apple",src:"../../assets/frutas/mverde.jpeg",precio:2.5,tieneDescuento:false},
+    {nombre:"Pineapple",src:"../../assets/frutas/piña.jpeg",precio:2.5,tieneDescuento:true},
+    {nombre:"Grapes",src:"../../assets/frutas/uvas.jpeg",precio:2.5,tieneDescuento:false},
   ];
 
   constructor(private service:RestService){} 

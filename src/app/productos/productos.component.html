@@ -4,7 +4,6 @@
 <!-- Search Bar -->
 <div class="search">
         <input id="input-search" [(ngModel)]='dato' type="text" placeholder="Type product's name">
-        <img class="img-search" src="../../assets/icons/search.png" alt="buscador" srcset="">
 </div>
 <br>
 <p>click on the cart if you're done</p>
@@ -27,11 +26,17 @@
                 <img class="card_img" [src]="item.src" alt="r">
                 <h2>{{item.nombre}}</h2>
                 <span>{{item.precio}} EUR/kg</span>
+                <!-- <div *ngIf="item.tieneDescuento" class="descuento">
+                        <img src="../../assets/icons/etiqueta.png" alt="" srcset="">
+                </div> -->
                 <div class="btn_container">
                         <button (click)="Add(item.nombre,item.precio)"  [ngClass]="btn_disenio">
+                                <img src="../../assets/icons/add-cart.png" alt="añadir" srcset="">
+                        </button>
+                        <button [routerLink]="['/details',item.nombre,{url:item.src}]"  [ngClass]="btn_disenio">
                                 <img src="../../assets/icons/info.png" alt="añadir" srcset="">
                         </button>
-                        <button [routerLink]="['/details',item.nombre,{url:item.src}]"   [ngClass]="btn_disenio">
+                        <button   [ngClass]="btn_disenio">
                                 <img src="../../assets/icons/marcador-de-favoritos.png" alt="info" srcset="">
                         </button>
                 </div>

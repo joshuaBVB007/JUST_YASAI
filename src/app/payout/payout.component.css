@@ -4,6 +4,7 @@ h1{
 
 img{
     width: 2vw;
+    border-radius: 50%;
 }
 
 .container{
@@ -24,7 +25,8 @@ img{
 .buttons_container{
     display: flex;
     flex-direction: row;
-    background-color: greenyellow;
+    align-items: center;
+    background-color: rgb(203, 175, 230);
     border-radius: 5px;
     padding: 6px;
 }
