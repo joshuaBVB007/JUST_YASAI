@@ -15,12 +15,12 @@ export class ProductosComponent implements OnInit{
   dato:string="";
 
   frutas:object[]=[
-    {nombre:"Açaí",src:"../../assets/frutas/açai.jpeg",precio:2.5,tieneDescuento:true},
-    {nombre:"Banana",src:"../../assets/frutas/banana.jpeg",precio:2.5,tieneDescuento:false},
-    {nombre:"Strawberry",src:"../../assets/frutas/cereza.jpeg",precio:2.5,tieneDescuento:true},
-    {nombre:"Green apple",src:"../../assets/frutas/mverde.jpeg",precio:2.5,tieneDescuento:false},
-    {nombre:"Pineapple",src:"../../assets/frutas/piña.jpeg",precio:2.5,tieneDescuento:true},
-    {nombre:"Grapes",src:"../../assets/frutas/uvas.jpeg",precio:2.5,tieneDescuento:false},
+    {nombre:"Açaí",imagen:"../../assets/frutas/açai.jpeg",precio:2.5,tieneDescuento:true},
+    {nombre:"Banana",imagen:"../../assets/frutas/banana.jpeg",precio:2.5,tieneDescuento:false},
+    {nombre:"Strawberry",imagen:"../../assets/frutas/cereza.jpeg",precio:2.5,tieneDescuento:true},
+    {nombre:"Green apple",imagen:"../../assets/frutas/mverde.jpeg",precio:2.5,tieneDescuento:false},
+    {nombre:"Pineapple",imagen:"../../assets/frutas/piña.jpeg",precio:2.5,tieneDescuento:true},
+    {nombre:"Grapes",imagen:"../../assets/frutas/uvas.jpeg",precio:2.5,tieneDescuento:false},
   ];
 
   constructor(private service:RestService){} 

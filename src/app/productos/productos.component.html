@@ -23,7 +23,7 @@
 <!-- CARDS DE LOS PRODUCTOS -->
 <div  class="conCards">
         <div *ngFor="let item of frutas | search:dato" class="card">
-                <img class="card_img" [src]="item.src" alt="r">
+                <img class="card_img" [src]="item.imagen" alt="imagen del producto">
                 <h2>{{item.nombre}}</h2>
                 <span>{{item.precio}} EUR/kg</span>
                 <!-- <div *ngIf="item.tieneDescuento" class="descuento">
