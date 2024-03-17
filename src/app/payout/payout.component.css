@@ -2,9 +2,27 @@ h1{
     text-align: center;
 }
 
+audio{
+    display: none;
+}
+
+.footer button{
+    color: white;
+    background-color: rgb(241, 30, 146);
+    font-size: medium;
+    border: none;
+    border-radius: 4px;
+    padding: 5px;
+    cursor: pointer;
+}
+
 img{
-    width: 2vw;
-    border-radius: 50%;
+    width: 100%;
+    border-radius: 10px;
+}
+
+.buttons_container img{
+    width: 30px;
 }
 
 .container{
@@ -14,21 +32,23 @@ img{
     justify-content: space-around;
     width: 80%;
     margin:auto;
-    /* background-color: yellow; */
 }
 
 .card{
     padding: 2%;
     margin: 2%;
+    width: 20%;
+    border-radius: 20px;
 }
 
-.buttons_container{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    background-color: rgb(203, 175, 230);
-    border-radius: 5px;
-    padding: 6px;
+.card_button{
+    color: white;
+    background-color: rgb(241, 30, 146);
+    font-size: medium;
+    border: none;
+    border-radius: 4px;
+    padding: 5px;
+    cursor: pointer;
 }
 
 .footer{
@@ -40,5 +60,8 @@ img{
     font-size: small;
     padding: 5px;
     border-top-right-radius:20px;
-    background-color:greenyellow;
+}
+
+.footer span{
+    font-size: large;
 }

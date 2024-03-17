@@ -4,16 +4,23 @@
 <br>
 <div class="container">
     <div  class="card" *ngFor="let item of items_tobeSealed;let i=index">
+        <img [src]="item.imagenName" alt="" srcset="">
         <p>Product: {{ item.productName }}</p>
-        <div class="buttons_container">
-            <img (click)="removeFromCartByClient(i,item.productPrize)" src="../../assets/icons/remover-archivo.png" alt="" srcset="">
-            <span>Prize: {{ item.productPrize }}€</span>
-        </div>
+        <span>Prize: {{ item.productPrize }} €/kg</span>
+        <button class="card_button" (click)="removeFromCartByClient(i,item.productPrize)">Delete</button>
     </div>
 </div>
 
 <footer class="footer">
+    <audio #sourcetag controls>
+        <source src="./../../assets/videos/coins.mp3" type="audio/mp3" />
+    </audio>
+    <audio #sourcetag2 controls>
+        <source src="./../../assets/videos/error.mp3" type="audio/mp3" />
+    </audio>
     <span>Total: {{ suma }}€ </span>
+    <button (click)="rejectPurchase()" *ngIf="suma">Reject</button>
+    <button (click)="buyProducts()" *ngIf="suma">Pay out</button>
 </footer>
 
 

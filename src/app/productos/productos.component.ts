@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { RestService } from '../rest.service';
+import { AmazonServiceService } from '../amazon-service.service';
 
 @Component({
   selector: 'app-productos',
@@ -23,9 +24,10 @@ export class ProductosComponent implements OnInit{
     {nombre:"Grapes",imagen:"../../assets/Frutas/uvas.jpeg",precio:2.5,tieneDescuento:false},
   ];
 
-  constructor(private service:RestService){} 
+  constructor(private service:RestService,private amazon:AmazonServiceService){} 
 
   ngOnInit(): void {
+    //this.amazon.doGetRequestToAmazon().subscribe(data => console.log(data));
     this.service.getString().subscribe((value: string) => {
           switch (value) {
             case "fresa":
@@ -48,8 +50,8 @@ export class ProductosComponent implements OnInit{
     this.service.setString(color);
   }
 
-  Add(productName:string,productPrize:number){
-    this.service.addProductToCart(productName,productPrize);
+  Add(productName:string,productPrize:number,imagenName:string){
+    this.service.addProductToCart(productName,productPrize,imagenName);
   }
     
 }

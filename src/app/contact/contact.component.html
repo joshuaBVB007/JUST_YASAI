@@ -5,10 +5,9 @@
     <input type="text" formControlName="name" placeholder="Name?">
     <input type="text" formControlName="mail" placeholder="Email?">
     <input type="text" formControlName="knowus" placeholder="How did you know us?">
-    <button 
-     [disabled]="!this.profileForm.valid"
-     (click)="SendToServer()"
-    >{{ !this.profileForm.valid ? "Blank fields" : "Send" }}</button>
+    <button [disabled]="!this.profileForm.valid" (click)="SendToServer()">
+        {{ !this.profileForm.valid ? "Blank fields" : "Send" }}
+    </button>
 </form> 
 
 <h1 class="popUp">Send it correctly</h1>
