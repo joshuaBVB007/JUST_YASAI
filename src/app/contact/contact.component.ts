@@ -1,9 +1,12 @@
 import { Component, OnInit } from '@angular/core';
+import { NavBarComponent } from '../nav-bar/nav-bar.component';
 import { FormControl, Validators, FormGroup } from '@angular/forms';
 import $  from 'jquery';
 
 @Component({
   selector: 'app-contact',
+  standalone:true,
+  imports: [NavBarComponent],
   templateUrl: './contact.component.html',
   styleUrls: ['./contact.component.css']
 })

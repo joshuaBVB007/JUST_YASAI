@@ -1,8 +1,13 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { RestService } from '../rest.service';
+import { NavBarComponent } from '../nav-bar/nav-bar.component';
+import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-payout',
+  standalone: true,
+  imports: [NavBarComponent,CommonModule,RouterModule],
   templateUrl: './payout.component.html',
   styleUrls: ['./payout.component.css']
 })

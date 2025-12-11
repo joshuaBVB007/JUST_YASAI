@@ -4,6 +4,7 @@ import { RestService } from '../rest.service';
 
 @Component({
   selector: 'app-counter',
+  standalone: true,
   templateUrl: './counter.component.html',
   styleUrls: ['./counter.component.css']
 })

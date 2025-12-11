@@ -1,9 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import { RestService } from '../rest.service';
+import { NavBarComponent } from '../nav-bar/nav-bar.component';
 import { AmazonServiceService } from '../amazon-service.service';
+import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
+import { ToolBarComponent } from '../tool-bar/tool-bar.component';
+import { SearchPipe } from '../search.pipe';
 
 @Component({
   selector: 'app-productos',
+  standalone:true,
+  imports:[NavBarComponent,CommonModule,RouterModule,FormsModule,ToolBarComponent,SearchPipe],
   templateUrl: './productos.component.html',
   styleUrls: ['./productos.component.css'],
 })

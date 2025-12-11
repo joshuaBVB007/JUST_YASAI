@@ -1,7 +1,11 @@
 import { Component,OnInit } from '@angular/core';
+import { NavBarComponent } from '../nav-bar/nav-bar.component';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-about-us',
+  standalone: true,
+  imports: [NavBarComponent,CommonModule],
   templateUrl: './about-us.component.html',
   styleUrls: ['./about-us.component.css']
 })
