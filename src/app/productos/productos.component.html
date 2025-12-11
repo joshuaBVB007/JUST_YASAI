@@ -14,11 +14,11 @@
         <img (click)="setButtonColor('uvas')"  src="../../assets/icons/uvas.png" alt="" srcset="">
 </div>
 
-<div class="menu_productos">
+<!-- <div class="menu_productos">
             <img src="../../assets/icons/cupcake.png" title="Desserts" alt="logo de postres">
             <img src="../../assets/icons/smoothie.png" title="Smoothies" alt="logo de smoothie">
             <img src="../../assets/icons/frutas.png" title="Fruits" alt="logo de frutas">
-</div>  
+</div>   -->
 <div  class="conCards">
         <div *ngFor="let item of frutas | search:dato" class="card">
                 <img class="card_img" [src]="item.imagen" alt="imagen del producto">
